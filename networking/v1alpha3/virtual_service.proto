@@ -197,6 +197,8 @@ message VirtualService {
   // ports with protocol HTTP/HTTP2/GRPC/TLS-terminated-HTTPS and service
   // entry ports using HTTP/HTTP2/GRPC protocols.  The first rule matching
   // an incoming request is used.
+  // +listType=map
+  // +listMapKey=name
   repeated HTTPRoute http = 3;
 
   // An ordered list of route rule for non-terminated TLS & HTTPS
@@ -405,6 +407,8 @@ message HTTPRoute {
   // The forwarding target can be one of several versions of a service (see
   // glossary in beginning of document). Weights associated with the
   // service version determine the proportion of traffic it receives.
+  // +listType=map
+  // +listMapKey=name
   repeated HTTPRouteDestination route = 2;
 
   // A HTTP rule can either return a direct_response, redirect or forward (default) traffic.
@@ -948,6 +952,9 @@ message HTTPRouteDestination {
 
   // Header manipulation rules
   Headers headers = 7;
+
+  // The name assigned to the HttpRouteDestination for debugging purposes
+  string name = 8;
 }
 
 // L4 routing rule weighted destination.
