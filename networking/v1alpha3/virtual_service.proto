@@ -397,6 +397,7 @@ message HTTPRoute {
   // route/match.
   // +optional
   // +default=""
+  // +kubebuilder:default=""
   string name = 17;
 
   // Match conditions to be satisfied for the rule to be
@@ -958,6 +959,7 @@ message HTTPRouteDestination {
   // The name assigned to the HttpRouteDestination for debugging purposes
   // +optional
   // +default=""
+  // +kubebuilder:default=""
   string name = 8;
 }
 
