@@ -662,6 +662,7 @@ type HTTPRoute struct {
 	// route's name will be concatenated with the match's name and will
 	// be logged in the access logs for requests matching this
 	// route/match.
+	// +default=""
 	Name string `protobuf:"bytes,17,opt,name=name,proto3" json:"name,omitempty"`
 	// Match conditions to be satisfied for the rule to be
 	// activated. All conditions inside a single match block have AND
@@ -1685,6 +1686,7 @@ type HTTPRouteDestination struct {
 	// Header manipulation rules
 	Headers *Headers `protobuf:"bytes,7,opt,name=headers,proto3" json:"headers,omitempty"`
 	// The name assigned to the HttpRouteDestination for debugging purposes
+	// +default=""
 	Name string `protobuf:"bytes,8,opt,name=name,proto3" json:"name,omitempty"`
 }
 

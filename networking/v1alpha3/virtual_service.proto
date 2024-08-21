@@ -395,6 +395,7 @@ message HTTPRoute {
   // route's name will be concatenated with the match's name and will
   // be logged in the access logs for requests matching this
   // route/match.
+  // +default=""
   string name = 17;
 
   // Match conditions to be satisfied for the rule to be
@@ -954,6 +955,7 @@ message HTTPRouteDestination {
   Headers headers = 7;
 
   // The name assigned to the HttpRouteDestination for debugging purposes
+  // +default=""
   string name = 8;
 }
 
